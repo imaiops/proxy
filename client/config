@@ -11,3 +11,5 @@ objectHighMark = 16384
 serverMaxSlots = 64
 serverSlots = 16
 serverSlots1 = 32
+allowedPorts = 1-65535
+tunnelAllowedPorts = 1-65535
