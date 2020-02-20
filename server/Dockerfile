@@ -1,14 +1,11 @@
-# Proxy Server
-FROM alpine:3.8
-
-MAINTAINER Soar
+FROM alpine:latest
 
 COPY shadowsocks.json /etc/shadowsocks.json
 COPY entrypoint.sh /entrypoint
+COPY ssserver /usr/bin/
 
 RUN apk update \
-    && apk add --no-cache py-pip tzdata \
-    && pip install shadowsocks \
+    && apk add --no-cache tzdata \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && chmod +x /entrypoint \
     && apk del tzdata \
