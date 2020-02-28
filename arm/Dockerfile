@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk update \
-    && apk add --no-cache tzdata \
+    && apk add --no-cache tzdata libev-dev libsodium-dev mbedtls-dev pcre-dev \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && apk del tzdata \
     && rm -rf /var/cache/apk
